@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 
 # Copyright (c) 2013-2015, Rethink Robotics
 # All rights reserved.
@@ -42,7 +42,7 @@ def blink():
         baxter_interface.Navigator('torso_left'),
         baxter_interface.Navigator('torso_right'),)
 
-    print ("Blinking LED's for 10 seconds")
+    print("Blinking LED's for 10 seconds")
     rate = rospy.Rate(10)
     i = 0
     while not rospy.is_shutdown() and i < 100:
@@ -55,16 +55,16 @@ def blink():
 
 def echo_input():
     def b0_pressed(v):
-        print ("Button 0: %s" % (v,))
+        print("Button 0: %s" % (v,))
 
     def b1_pressed(v):
-        print ("Button 1: %s" % (v,))
+        print("Button 1: %s" % (v,))
 
     def b2_pressed(v):
-        print ("Button 2: %s" % (v,))
+        print("Button 2: %s" % (v,))
 
     def wheel_moved(v):
-        print ("Wheel Increment: %d, New Value: %s" % (v, nav.wheel))
+        print("Wheel Increment: %d, New Value: %s" % (v, nav.wheel))
 
     nav = baxter_interface.Navigator('left')
     nav.button0_changed.connect(b0_pressed)
@@ -72,7 +72,7 @@ def echo_input():
     nav.button2_changed.connect(b2_pressed)
     nav.wheel_changed.connect(wheel_moved)
 
-    print ("Press input buttons on the left navigator, "
+    print("Press input buttons on the left navigator, "
            "input will be echoed here.")
 
     rate = rospy.Rate(1)

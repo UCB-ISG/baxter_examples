@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # Copyright (c) 2013-2015, Rethink Robotics
 # All rights reserved.
@@ -112,7 +112,7 @@ class JointSprings(object):
         cur_pos = self._limb.joint_angles()
         cur_vel = self._limb.joint_velocities()
         # calculate current forces
-        for joint in self._start_angles.keys():
+        for joint in list(self._start_angles.keys()):
             # spring portion
             cmd[joint] = self._springs[joint] * (self._start_angles[joint] -
                                                    cur_pos[joint])
