@@ -103,7 +103,7 @@ class Puppeteer(object):
 
         print("Puppeting:\n"
               "  Grab %s cuff and move arm.\n"
-              "  Press Ctrl-C to stop...") % (self._control_limb,)
+              "  Press Ctrl-C to stop..." % (self._control_limb,))
         while not rospy.is_shutdown():
             cmd = {}
             for idx, name in enumerate(puppet_joint_names):
